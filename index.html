@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KasKita - Sistem Keuangan Kelas</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar Navigasi -->
+        <aside class="sidebar">
+            <h2><i class="fa-solid fa-wallet"></i> KasKita</h2>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-target="dashboard"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+                <li><a href="#" class="nav-link" data-target="iuran"><i class="fa-solid fa-users"></i> Status Iuran</a></li>
+                <li><a href="#" class="nav-link" data-target="tambah"><i class="fa-solid fa-circle-plus"></i> Input Transaksi</a></li>
+            </ul>
+        </aside>
+
+        <!-- Konten Utama -->
+        <main class="main-content">
+            <header>
+                <h3>Portal Keuangan Kelas TI</h3>
+                <span class="user-badge"><i class="fa-solid fa-user-shield"></i> Bendahara Kelas</span>
+            </header>
+
+            <!-- HALAMAN 1: DASHBOARD -->
+            <section id="dashboard" class="page-section active">
+                <h2>Dashboard Keuangan</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <p>Total Kas Masuk</p>
+                        <h3>Rp 1.250.000</h3>
+                    </div>
+                    <div class="card">
+                        <p>Total Pengeluaran</p>
+                        <h3>Rp 350.000</h3>
+                    </div>
+                    <div class="card">
+                        <p>Saldo Kas Saat Ini</p>
+                        <h3 class="success">Rp 900.000</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HALAMAN 2: STATUS IURAN -->
+            <section id="iuran" class="page-section">
+                <h2>Status Pembayaran Iuran Warga Kelas</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Mahasiswa</th>
+                                <th>Bulan</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Rifky Luthfi</td>
+                                <td>Oktober</td>
+                                <td><span class="badge lunas">Lunas</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Rezon</td>
+                                <td>Oktober</td>
+                                <td><span class="badge lunas">Lunas</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Siti Rahma</td>
+                                <td>Oktober</td>
+                                <td><span class="badge pending">Belum Bayar</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- HALAMAN 3: FORM INPUT TRANSAKSI -->
+            <section id="tambah" class="page-section">
+                <h2>Form Tambah Kas Masuk / Keluar</h2>
+                <form id="kasForm">
+                    <div class="form-group">
+                        <label>Keterangan Transaksi</label>
+                        <input type="text" id="keterangan" required placeholder="Contoh: Iuran Minggu ke-1 / Beli Spidol">
+                    </div>
+                    <div class="form-group">
+                        <label>Jenis Transaksi</label>
+                        <select id="jenis">
+                            <option value="Masuk">Pemasukan (Iuran)</option>
+                            <option value="Keluar">Pengeluaran</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nominal (Rp)</label>
+                        <input type="number" id="nominal" required placeholder="50000">
+                    </div>
+                    <button type="submit" class="btn-submit">Simpan Transaksi</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
